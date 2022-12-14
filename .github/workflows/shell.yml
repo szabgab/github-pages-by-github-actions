@@ -1,0 +1,18 @@
+name: Shell
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Shell - View environment
+        run: |
+          echo "Hello World" >  _site/index.html
+          echo "<pre>"       >> _site/index.html
+          printenv | sort    >> _site/index.html
+          echo "</pre>"       >> _site/index.html
+
