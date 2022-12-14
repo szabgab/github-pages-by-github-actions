@@ -11,8 +11,9 @@ jobs:
 
       - name: Shell - View environment
         run: |
+          mkdir -p _site
           echo "Hello World" >  _site/index.html
           echo "<pre>"       >> _site/index.html
           printenv | sort    >> _site/index.html
-          echo "</pre>"       >> _site/index.html
+          echo "</pre>"      >> _site/index.html
 
